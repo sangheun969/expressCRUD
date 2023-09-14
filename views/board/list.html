@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIST PAGE</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1><a href="/">게시판</a></h1>
+    </div>
+    <div>
+      <table style="border: 1px solid black">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>이름</th>
+            <th>날짜</th>
+            <th>조회수</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in list %}
+          <tr>
+            <td>{{data.id}}</td>
+            <td><a href="/boards/view?id={{data.id}}">{{data.title}}</a></td>
+            <td>{{data.writer}}</td>
+            <td>{{data.created_at}}</td>
+            <td>{{data.hit}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+    <a href="/boards/write">글쓰기</a>
+  </body>
+</html>

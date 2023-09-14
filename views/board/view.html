@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>view page</title>
+  </head>
+  <body>
+    <p>글제목: {{title}}`</p>
+    <p>작성일: {{created_at}}</p>
+    <p>작성자: {{writer}}</p>
+    <p>글내용: {{content}}</p>
+    <p>조회수: {{hit}}</p>
+
+    <button><a href="/boards/list">등록</a></button>
+    <button><a href="/boards/modify?id={{id}}">글수정</a></button>
+    <button><a href="/boards/delete?id={{id}}">삭제</a></button>
+  </body>
+</html>
